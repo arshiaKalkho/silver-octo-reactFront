@@ -1,0 +1,17 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.root {
+  --color-primary: #ffffff;
+  --color-secondary: #4463ee;
+  --color-tertioary: #ff13c4;
+  --color-dark: #494949;
+  --color-darker: #000000;
+  --color-light: #b6b5b5;
+  --color-lighter: #ffffff;
+}
