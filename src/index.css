@@ -10,7 +10,7 @@
 }
 
 html {
-  --color-primary: #ffffff;
+  --color-primary: #dbd6d6;
   --color-secondary: #c9f78e;
   --color-tertioary: #ff13c4;
   --color-dark: #313131;
@@ -54,4 +54,9 @@ html {
 .nav-logo {
   width: 8vw;
   height: 5vh;
+}
+.main {
+  width: 100vw;
+  height: 90vh;
+  background-color: var(--color-primary);
 }
