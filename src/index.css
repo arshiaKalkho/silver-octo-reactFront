@@ -24,11 +24,24 @@ html {
   position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   background-color: var(--color-dark);
+  transition: 200ms ease-in-out;
+  
 }
-
+.navbar:hover{
+  height: 7vh;
+  transition: 200ms ease-in-out;
+}
+ .navbar:hover .nav-left img{
+  transform: rotate(90deg);
+  transition: 200ms ease-in-out;
+}
+.nav-left img{
+  transform: rotate(-0deg);
+  transition:200ms ease-in-out;
+}
 .nav-left {
   display: flex;
   flex-direction: row;
@@ -49,12 +62,49 @@ html {
 .nav-links {
   text-decoration: none;
   color: var(--color-secondary);
+  text-align: center;
+  position: relative;
+  padding-top: 2vh;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  
   margin-right: 5vw;
+  visibility: hidden;
+  opacity: 0;
+  height: 7vh;
+  width: fill;
+  transition: 200ms ease-in-out;
+}
+
+.nav-links:hover{
+  background-color: var(--color-light);
+}
+
+.navbar:hover .nav-links{
+  visibility: visible;
+  font-size: 1.2rem;
+  opacity: 1;
+  transition: 200ms ease-in-out;
 }
 .nav-logo {
   width: 8vw;
   height: 5vh;
 }
+.nav-icon{
+  fill:var(--color-secondary);
+  
+  opacity: 1;
+  transition: 100ms ease-in-out;
+}
+.navbar:hover .nav-icon{
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  right: 20px;
+}
+
+
+
 .main {
   width: 100vw;
   height: 90vh;
