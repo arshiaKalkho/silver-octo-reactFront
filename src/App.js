@@ -7,15 +7,16 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 function App() {
   return (
-    
+      
       <Router>
-        <Nav/>
-          <Routes>
-            <Route path="/" element={<Main/>}/>
-            <Route path="/About" element={<About/>}/>
-            <Route path="/contactMe" element={<ContactMe/>}/>
-          </Routes>
-      </Router>
+            <Nav/>
+              <Routes>
+                <Route path="/" element={<Main/>}/>
+                <Route path="/About" element={<About/>}/>
+                <Route path="/contactMe" element={<ContactMe/>}/>
+              </Routes>
+      </Router> 
+      
       
   );
 }
