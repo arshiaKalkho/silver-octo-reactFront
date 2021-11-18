@@ -15,7 +15,7 @@ html {
   --color-tertioary: #ff13c4;
   --color-dark: #313131;
   --color-darker: #000000;
-  --color-light: #b6b5b5;
+  --color-light: #d3d3d3;
   --color-lighter: #ffffff;
 }
 .navbar {
@@ -83,7 +83,7 @@ html {
 
 
 .nav-links:hover{
-  background-color: var(--color-primary);
+  background-color: var(--color-light);
 }
 
 .navbar:hover .nav-links{
@@ -119,10 +119,20 @@ html {
 
 
 
-
+/* main component */
 
 .main {
   width: 100vw;
   height: 90vh;
-  background-color: var(--color-primary);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;  
+  
+}
+
+
+.main-body{
+  width: 100vw;
+  height: 80vh;
+  background-color: var(--color-light);
 }

@@ -8,9 +8,14 @@ export default class main extends Component {
 
     render() {
         return (
-            <div className="main">
-                
-            </div>
+            <>
+                <div className="main" style={{backgroundImage:"url('/main-background.jpg')"}}>
+                    
+                </div>
+                <div className="main-body">
+                    
+                </div>
+            </>
         )
     }
 }
