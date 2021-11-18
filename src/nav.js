@@ -8,14 +8,13 @@ function nav() {
             <div className="nav-left">
                 <img className="nav-logo" src="/react-logo.svg" alt="logo" />
             </div>
+            
             <div className="nav-right">
-                 
+            
                 <Link to="/" className="nav-links">Home</Link>
-                
                 <Link to="/About" className="nav-links">About</Link>
- 
                 <Link to="/contactMe" className="nav-links">Contact</Link>
-                
+            
             </div>
         </div>
     )
