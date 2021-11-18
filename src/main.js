@@ -9,11 +9,13 @@ export default class main extends Component {
     render() {
         return (
             <>
-                <div className="main" style={{backgroundImage:"url('/main-background.jpg')"}}>
+                <div className="main" style={{backgroundImage:"url('/buy-sell-background.jpg')"}}>
                     
                 </div>
                 <div className="main-body">
-                    
+                    <div className="summery-cards"></div>
+                    <div className="summery-cards"></div>
+                    <div className="summery-cards"></div>
                 </div>
             </>
         )

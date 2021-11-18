@@ -96,23 +96,7 @@ html {
   width: 8vw;
   height: 4.5vh;
 }
-@media only screen and (min-width : 1200px) {
-  .navbar:hover .nav-links{
-    
-    font-size: 1.4rem;
-  }
-  
-}
-@media only screen and (max-width : 550px) {
-  .navbar:hover .nav-links{
-    
-    font-size: 0.8rem;
-  }
-  .nav-right{
-    margin-right: 5vw;
-  }
-  
-}
+
 
 
 /* navbar completed */
@@ -135,4 +119,51 @@ html {
   width: 100vw;
   height: 80vh;
   background-color: var(--color-light);
+  display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width : 1200px) {
+  .navbar:hover .nav-links{
+    
+    font-size: 1.4rem;
+  }
+  
+}
+@media only screen and (max-width : 550px) {
+  .navbar:hover .nav-links{
+    
+    font-size: 0.8rem;
+  }
+  .nav-right{
+    margin-right: 5vw;
+  }
+  
 }
