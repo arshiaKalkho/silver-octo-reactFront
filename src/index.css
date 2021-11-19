@@ -166,6 +166,12 @@ html {
   .navbar:hover .nav-links {
     font-size: 1.4rem;
   }
+  .main-widget-layer-inner {
+    font-size: 1.2rem;
+  }
+  .main-welcome {
+    font-size: 1.2rem;
+  }
 }
 @media only screen and (max-width: 550px) {
   .navbar:hover .nav-links {

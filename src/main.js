@@ -9,7 +9,7 @@ export default class main extends Component {
     render() {
         return (
             <>
-                <div className="main" style={{backgroundImage:"url('/main-top-background.jpg')"}}>
+                <div className="main" style={{backgroundImage:"url('/images/main-top-background.jpg')"}}>
                 
                     <div className="main-welcome">
                         <h1>Buy and sell </h1>
@@ -21,12 +21,12 @@ export default class main extends Component {
                                 <h3>we ship</h3>
                                 <p>our premium member ship gives you access to unlimited shipments in the continental US</p>
                             </div>
-                            <div className="main-widget-layer-inner"style={{backgroundImage:"url('/shipping.jpg')"}}>
+                            <div className="main-widget-layer-inner"style={{backgroundImage:"url('/images/shipping.jpg')"}}>
 
                             </div>
                         </div>
                         <div className="main-widget-layer">
-                            <div className="main-widget-layer-inner" style={{backgroundImage:"url('/payment.jpg')"}}></div>
+                            <div className="main-widget-layer-inner" style={{backgroundImage:"url('/images/payment.jpg')"}}></div>
                             <div className="main-widget-layer-inner">
                                 <h3>handle tranactions</h3>
                                 <p>we handle transaction, weater using shopify, paypal or visa.</p>
@@ -37,7 +37,7 @@ export default class main extends Component {
                             <div className="main-widget-layer-inner"><h3>and store</h3>
                                 <p>Don't have storage, As long as your a member you have access to our wearhouses to store your product.</p>
                                 </div>
-                            <div className="main-widget-layer-inner" style={{backgroundImage:"url('/wearhouse.jpg')"}}>
+                            <div className="main-widget-layer-inner" style={{backgroundImage:"url('/images/wearhouse.jpg')"}}>
                             </div>
                             
                         </div>
