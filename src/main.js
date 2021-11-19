@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import Card from './card'
+
 
 export default class main extends Component {
     static propTypes = {
@@ -38,6 +40,7 @@ export default class main extends Component {
                                 <p>Don't have storage, As long as your a member you have access to our wearhouses to store your product.</p>
                                 </div>
                             <div className="main-widget-layer-inner" style={{backgroundImage:"url('/images/wearhouse.jpg')"}}>
+                                
                             </div>
                             
                         </div>
@@ -52,15 +55,18 @@ export default class main extends Component {
                 </div>
                 <div className="main-body">
                     <div className="summery-cards">
-                        <h1>1</h1>
+                        <Card title={1} body={"this is the first text and need to stay behidn the number one"}/>
                         
                     </div>
                     <div className="summery-cards">
-                        <h1>2</h1>
+                        
+                        <Card title={2} body={"this is two"}/>
                     </div>
                     <div className="summery-cards">
-                        <h1>3</h1>
+                        <Card title={1} body={"this is one"}/>
+                        
                     </div>
+                    
                 </div>
             </>
         )
