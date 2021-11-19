@@ -86,7 +86,7 @@ html {
 }
 
 .nav-links:hover {
-  background-color: var(--color-darker);
+  background-color: var(--color-light);
 }
 
 .navbar:hover .nav-links {
@@ -151,34 +151,52 @@ html {
   padding: 4px;
 }
 
+.main-header {
+  text-align: center;
+  color: var(--color-primary);
+  background: linear-gradient(#4882ee, var(--color-light));
+  height: 6vh;
+}
+
 .main-body {
   width: 100%;
-  height: 80vh;
+  height: fit-content;
   background-color: var(--color-light);
-
+  padding: 15vh 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, 20rem);
   justify-content: center;
-  gap: 2rem;
-  padding: 1rem;
+  gap: 3rem;
 }
 .card {
   height: 30vh;
   width: auto;
   text-align: center;
-  background-color: chartreuse;
   position: relative;
+  padding-top: 2rem;
+  /* background-color: var(--color-primary); */
 }
+
 .card h1 {
   display: block;
   font-size: 10rem;
-  opacity: 0.2;
+  opacity: 0.4;
+  color: var(--color-dark);
   margin-left: 37%;
   position: absolute;
 }
+
 .card p {
   margin-top: 10%;
 }
+
+.card:hover h1 {
+  opacity: 0;
+}
+.card:hover p {
+  color: var(--color-tertioary);
+}
+
 @media only screen and (min-width: 1200px) {
   .navbar:hover .nav-links {
     font-size: 1.4rem;

@@ -53,17 +53,24 @@ export default class main extends Component {
                 
                 
                 </div>
+
+
+
+                <div className="main-header">
+                    <h1>Why Us?</h1>
+                </div>
+                
                 <div className="main-body">
                     <div className="summery-cards">
-                        <Card title={1} body={"this is the first text and need to stay behidn the number one"}/>
+                        <Card title={1} body={"Our company siplifies the process, wether your a professional or beginner our scalable products allow you to conect to your customers and/or stores. Adding a personal touch with incentives deals and free shipment using world class cargo companies including Fedex and UPS."}/>
                         
                     </div>
                     <div className="summery-cards">
                         
-                        <Card title={2} body={"this is two"}/>
+                        <Card title={2} body={"You don't need to handle return anymore, Our team got you covered with free returns in the continental US. And for sellers our shipping rates are the lowest on the market on returns allowing for a more open and easy return policy. So our customers and their customer stay as happy as possible."}/>
                     </div>
                     <div className="summery-cards">
-                        <Card title={1} body={"this is one"}/>
+                        <Card title={3} body={"we have the greatest deals on our wearhouses, completely scalable products for anything from a toothbrush to a tracktor. Our state of the arc wearhouses stacked with robotic technology allows for automated system and intant accurate updates on all stored products, All at a great price."}/>
                         
                     </div>
                     
