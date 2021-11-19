@@ -114,21 +114,41 @@ html {
   align-items: center;
   justify-content: space-between;
 }
-.main-invite {
+.main-welcome {
   color: var(--color-primary);
+  width: 40vw;
   margin: 10vh 2vw;
 }
-.main-invite p {
+.main-welcome p {
   color: var(--color-lighter);
 }
-.main-shipping-image {
+.main-widget {
   border-radius: 10px;
+  background-color: var(--color-lighter);
+  height: 75vh;
+  width: 60vw;
+  margin: 10vh 1vw;
+  overflow: hidden;
+}
+.main-widget-layer {
+  display: flex;
+  height: 25vh;
+
+  align-items: center;
+  justify-content: space-between;
+}
+.main-widget-layer-inner h3 {
+  color: var(--color-tertioary);
+}
+
+.main-widget-layer-inner {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 60vh;
-  width: 30vw;
-  margin: 10vh 2vw;
+  text-align: center;
+  height: inherit;
+  width: 50%;
+  padding: 4px;
 }
 
 .main-body {
@@ -153,5 +173,26 @@ html {
   }
   .nav-right {
     padding-right: 5vw;
+  }
+  .main-widget-layer-inner p {
+    font-size: 0.8rem;
+  }
+  .main {
+    flex-direction: column;
+    height: 105vh;
+    justify-content: flex-start;
+    gap: 4vh;
+  }
+  .main-welcome {
+    width: 80%;
+    margin-bottom: 1vh;
+  }
+  .main-widget-layer {
+  }
+  .main-widget {
+    margin-top: 0;
+    margin-bottom: 2vh;
+    height: 90vh;
+    width: 90vw;
   }
 }
