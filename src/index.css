@@ -122,6 +122,9 @@ html {
   padding: 1rem;
   border-radius: 10px;
 }
+.main-welcome h1 {
+  margin-top: 0;
+}
 .main-welcome p {
   color: var(--color-darker);
 }
@@ -129,7 +132,7 @@ html {
   background-color: var(--color-primary);
   border-radius: 10px;
   border: none;
-  width: 20%;
+  width: 25%;
   height: 2.5rem;
   margin: 0.5rem;
   margin-top: 1rem;
@@ -201,18 +204,24 @@ html {
 }
 
 .main-header {
+  margin-top: 5vh;
   height: 20vh;
   display: flex;
   align-content: center;
   justify-content: center;
-  flex-direction: column;
 }
-.main-header p,
-h1 {
+.main-header > div {
+  box-shadow: 0 5px 5px 0 var(--color-darker);
+  padding: 3px;
+  border-radius: 10px;
+  margin: 1vh 3vw;
+  height: fit-content;
+}
+.main-header > div > p,
+.main-header > div > h1 {
   text-align: center;
   color: var(--color-darker);
-  margin-top: 5vh;
-  max-width: 60vw;
+  margin: 1vh;
 }
 
 .main-body {
@@ -277,12 +286,12 @@ h1 {
   }
   .main {
     flex-direction: column;
-    height: 105vh;
+    height: 115vh;
     justify-content: flex-start;
     gap: 4vh;
   }
   .main-welcome {
-    width: 80%;
+    width: 90%;
     margin-bottom: 1vh;
   }
   .main-widget-layer {
