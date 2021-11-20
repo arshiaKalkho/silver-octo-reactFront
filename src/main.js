@@ -16,7 +16,10 @@ export default class main extends Component {
                     <div className="main-welcome">
                         <h1>Buy and sell </h1>
                         <p>Buy and sell your product on our platform for free, Let us worry about shipping, hadeling, payment and even wearhousing if neccesary.</p>
+                        <button className='welcome-store-button'>Store</button>
+                        <button className='welcome-join-button'>Join</button>
                     </div>
+                    
                     <div className="main-widget" >
                         <div className="main-widget-layer" >
                             <div className="main-widget-layer-inner">
@@ -56,9 +59,7 @@ export default class main extends Component {
 
 
 
-                <div className="main-header">
-                    <h1>Why Us?</h1>
-                </div>
+                
                 
                 <div className="main-body">
                     <div className="summery-cards">

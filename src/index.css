@@ -9,7 +9,7 @@
   font-family: "Shippori Antique B1", sans-serif;
 }
 html {
-  --color-primary: #dfdc2d;
+  --color-primary: #19cc09;
   --color-secondary: #06eaf1;
   --color-tertioary: #1e33ee;
   --color-dark: #313131;
@@ -118,9 +118,29 @@ html {
   color: var(--color-primary);
   width: 40vw;
   margin: 10vh 2vw;
+  background-color: var(--color-lighter);
+  padding: 1rem;
+  border-radius: 10px;
 }
 .main-welcome p {
-  color: var(--color-lighter);
+  color: var(--color-darker);
+}
+.welcome-store-button {
+  background-color: var(--color-primary);
+  border-radius: 10px;
+  border: none;
+  width: fill;
+  height: 2.5rem;
+  margin: 0.5rem;
+  margin-top: 1rem;
+}
+.welcome-join-button {
+  background-color: var(--color-secondary);
+  border-radius: 10px;
+  border: none;
+  width: fill;
+  height: 2.5rem;
+  margin: 0.5rem;
 }
 .main-widget {
   border-radius: 10px;
@@ -161,7 +181,7 @@ html {
 .main-body {
   width: 100%;
   height: fit-content;
-  background-color: var(--color-light);
+  background-color: var(--color-lighter);
   padding: 15vh 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, 20rem);
@@ -169,25 +189,23 @@ html {
   gap: 3rem;
 }
 .card {
-  height: 30vh;
+  height: 45vh;
   width: auto;
   text-align: center;
-  position: relative;
-  padding-top: 2rem;
-  /* background-color: var(--color-primary); */
+  padding: 1rem;
+  background-color: var(--color-lighter);
+  box-shadow: 0 5px 5px 0 var(--color-darker);
+  border-radius: 10px;
 }
 
 .card h1 {
-  display: block;
-  font-size: 10rem;
+  font-size: 5rem;
+  text-align: center;
   opacity: 0.4;
   color: var(--color-dark);
-  margin-left: 37%;
-  position: absolute;
 }
 
 .card p {
-  margin-top: 10%;
 }
 
 .card:hover h1 {
@@ -199,7 +217,7 @@ html {
 
 @media only screen and (min-width: 1200px) {
   .navbar:hover .nav-links {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
   .main-widget-layer-inner {
     font-size: 1.2rem;
