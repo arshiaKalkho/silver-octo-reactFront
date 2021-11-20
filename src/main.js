@@ -59,7 +59,10 @@ export default class main extends Component {
 
 
 
-                
+                <div className="main-header"> 
+                    <h1>Why Us?</h1>
+                    <p>Here we are working hard to create the best user experience. This applies both to stores and customer, These are just some of the reasons why you shold choose us.</p>
+                </div>
                 
                 <div className="main-body">
                     <div className="summery-cards">

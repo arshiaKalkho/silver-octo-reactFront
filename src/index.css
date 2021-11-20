@@ -9,7 +9,7 @@
   font-family: "Shippori Antique B1", sans-serif;
 }
 html {
-  --color-primary: #19cc09;
+  --color-primary: #2ea523;
   --color-secondary: #06eaf1;
   --color-tertioary: #1e33ee;
   --color-dark: #313131;
@@ -129,18 +129,47 @@ html {
   background-color: var(--color-primary);
   border-radius: 10px;
   border: none;
-  width: fill;
+  width: 20%;
   height: 2.5rem;
   margin: 0.5rem;
   margin-top: 1rem;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
 }
 .welcome-join-button {
   background-color: var(--color-secondary);
   border-radius: 10px;
   border: none;
-  width: fill;
+  width: 25%;
   height: 2.5rem;
   margin: 0.5rem;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.welcome-join-button:after,
+.welcome-store-button:after {
+  content: "»";
+  position: absolute;
+  opacity: 0;
+  top: 10px;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.welcome-join-button:hover,
+.welcome-store-button:hover {
+  padding-right: 24px;
+  padding-left: 8px;
+  transition: 200ms ease-in-out;
+}
+.welcome-join-button:hover::after,
+.welcome-store-button:hover::after {
+  opacity: 1;
+  right: 10px;
 }
 .main-widget {
   border-radius: 10px;
@@ -172,10 +201,18 @@ html {
 }
 
 .main-header {
+  height: 20vh;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.main-header p,
+h1 {
   text-align: center;
-  color: var(--color-primary);
-  background: linear-gradient(#4882ee, var(--color-light));
-  height: 6vh;
+  color: var(--color-darker);
+  margin-top: 5vh;
+  max-width: 60vw;
 }
 
 .main-body {
@@ -196,10 +233,12 @@ html {
   background-color: var(--color-lighter);
   box-shadow: 0 5px 5px 0 var(--color-darker);
   border-radius: 10px;
+  overflow: hidden;
 }
 
 .card h1 {
-  font-size: 5rem;
+  margin-top: 0;
+  font-size: 4rem;
   text-align: center;
   opacity: 0.4;
   color: var(--color-dark);
