@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 export default function Nav() {
     
     
-    const [currentPage, setCurrentPage] = useState("Home");
+    const [currentPage, setCurrentPage] = useState("");
     
     const setCurrent = (curr)=>{
         setCurrentPage(curr);
@@ -20,7 +20,7 @@ export default function Nav() {
             
             <div className="nav-right">
                 
-                <Link to="/" className="nav-links" onClick={()=>setCurrent("Home")}>Home</Link>
+                <Link to="/" className="nav-links" onClick={()=>setCurrent("")}>Home</Link>
                 <Link to="/About" className="nav-links" onClick={()=>setCurrent("About")}>About</Link>
                 <Link to="/contactMe" className="nav-links" onClick={()=>setCurrent("Contact")}>Contact</Link>
                 <h3 className="current-page">{currentPage}</h3>

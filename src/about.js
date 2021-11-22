@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export default class about extends Component {
+export default class About extends Component {
     render() {
         return (
-            <div>
-                this is about
+            <div className="about" style={{backgroundImage:"/images/about-background.jpg"}}>
+                
             </div>
         )
     }
