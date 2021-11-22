@@ -1,8 +1,17 @@
 
-import React from 'react'
+import React, {useState}from 'react'
 import {Link} from 'react-router-dom'
 
-function nav() {
+
+export default function Nav() {
+    
+    
+    const [currentPage, setCurrentPage] = useState("Home");
+    
+    const setCurrent = (curr)=>{
+        setCurrentPage(curr);
+    }
+    
     return (
         <div className="navbar">
             <div className="nav-left">
@@ -10,14 +19,14 @@ function nav() {
             </div>
             
             <div className="nav-right">
-            
-                <Link to="/" className="nav-links">Home</Link>
-                <Link to="/About" className="nav-links">About</Link>
-                <Link to="/contactMe" className="nav-links">Contact</Link>
-            
+                
+                <Link to="/" className="nav-links" onClick={()=>setCurrent("Home")}>Home</Link>
+                <Link to="/About" className="nav-links" onClick={()=>setCurrent("About")}>About</Link>
+                <Link to="/contactMe" className="nav-links" onClick={()=>setCurrent("Contact")}>Contact</Link>
+                <h3 className="current-page">{currentPage}</h3>
             </div>
         </div>
     )
 }
 
-export default nav
+

@@ -69,7 +69,10 @@ html {
   height: inherit;
   width: 70vw;
 }
-
+.current-page {
+  color: var(--color-secondary);
+  transition: 200 ease-in-out;
+}
 .nav-links {
   text-decoration: none;
   color: var(--color-secondary);
@@ -95,6 +98,12 @@ html {
   opacity: 1;
   transition: 200ms ease-in-out;
 }
+
+.navbar:hover .current-page {
+  opacity: 0;
+  transition: 200ms ease-in-out;
+}
+
 .nav-logo {
   width: 8vw;
   height: 4.5vh;
@@ -211,7 +220,7 @@ html {
   justify-content: center;
 }
 .main-header > div {
-  box-shadow: 0 5px 5px 0 var(--color-darker);
+  /* box-shadow: 0 5px 5px 0 var(--color-darker); */
   padding: 3px;
   border-radius: 10px;
   margin: 1vh 3vw;
@@ -240,7 +249,7 @@ html {
   text-align: center;
   padding: 1rem;
   background-color: var(--color-lighter);
-  box-shadow: 0 5px 5px 0 var(--color-darker);
+  /* box-shadow: 0 5px 5px 0 var(--color-darker); */
   border-radius: 10px;
   overflow: hidden;
 }
