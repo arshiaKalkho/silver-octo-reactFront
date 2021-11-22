@@ -23,7 +23,7 @@ export default class main extends Component {
                     <div className="main-widget" >
                         <div className="main-widget-layer" >
                             <div className="main-widget-layer-inner">
-                                <h3>we ship</h3>
+                                <h3>We ship</h3>
                                 <p>our premium member ship gives you access to unlimited shipments in the continental US</p>
                             </div>
                             <div className="main-widget-layer-inner"style={{backgroundImage:"url('/images/shipping.jpg')"}}>
@@ -33,13 +33,13 @@ export default class main extends Component {
                         <div className="main-widget-layer">
                             <div className="main-widget-layer-inner" style={{backgroundImage:"url('/images/payment.jpg')"}}></div>
                             <div className="main-widget-layer-inner">
-                                <h3>handle tranactions</h3>
+                                <h3>Handle tranactions</h3>
                                 <p>we handle transaction, weater using shopify, paypal or visa.</p>
                             </div>
 
                         </div>
                         <div className="main-widget-layer">
-                            <div className="main-widget-layer-inner"><h3>and store</h3>
+                            <div className="main-widget-layer-inner"><h3>And store</h3>
                                 <p>Don't have storage, As long as your a member you have access to our wearhouses to store your product.</p>
                                 </div>
                             <div className="main-widget-layer-inner" style={{backgroundImage:"url('/images/wearhouse.jpg')"}}>

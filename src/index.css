@@ -71,7 +71,7 @@ html {
 }
 .current-page {
   color: var(--color-secondary);
-  transition: 200 ease-in-out;
+  transition: 500ms ease-in-out;
 }
 .nav-links {
   text-decoration: none;
@@ -101,7 +101,7 @@ html {
 
 .navbar:hover .current-page {
   opacity: 0;
-  transition: 200ms ease-in-out;
+  transition: 500ms ease-in-out;
 }
 
 .nav-logo {
@@ -265,11 +265,21 @@ html {
 .card p {
 }
 
-.card:hover h1 {
-  opacity: 0;
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: fill;
+  height: 20vh;
+  background-color: var(--color-dark);
 }
-.card:hover p {
-  color: var(--color-tertioary);
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-inner > * {
+  color: var(--color-lighter);
 }
 
 @media only screen and (min-width: 1200px) {
