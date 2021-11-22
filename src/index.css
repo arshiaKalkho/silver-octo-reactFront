@@ -267,25 +267,48 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  padding: 4rem 2rem;
+}
+.about-toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+.toggle-button {
+  cursor: pointer;
+  background-repeat: no-repeat;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 2rem 4rem;
+}
+
+.about-grid {
+  padding: 2rem 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, 25rem);
   justify-content: center;
   gap: 1rem;
 }
-
+.about-cards > p {
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
+.about-cards > p::-webkit-scrollbar {
+  display: none;
+}
 .about-cards {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 2rem;
-  padding: 1.5rem;
+  gap: 1rem;
+  padding: 1rem;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.7);
   height: 20rem;
   transition: 200ms ease-in-out;
 }
+
 .about-cards:hover {
   background-color: rgba(255, 255, 255, 0.9);
   transition: 200ms ease-in-out;
@@ -298,7 +321,7 @@ html {
   align-items: center;
   justify-content: space-evenly;
   width: fill;
-  height: 20vh;
+  height: fit-content;
   background-color: var(--color-dark);
 }
 .footer-inner {
