@@ -1,9 +1,25 @@
 import React, { Component } from 'react'
 
 export default class About extends Component {
+    constructor(){
+        super();
+        this.state = {layout:"1"}
+        this.state = {cardWidth:"25rem"}
+    }
+    
+    toggle = ()=>{
+        if(this.state.layout==="1"){
+            this.setState({layout:"auto-fit", cardWidth:"25rem"})
+        }else
+        this.setState({layout:"1", cardWidth:"auto"})
+    }
+    
+    
     render() {
         return (
-            <div className="about" style={{backgroundImage:'url("/images/about-background.jpg")'}}>
+            <>
+            <button onClick={()=>this.toggle()}>toggle</button>
+            <div className="about" style={{backgroundImage:'url("/images/about-background.jpg") ', gridTemplateColumns: `repeat(${this.state.layout}, ${this.state.cardWidth})`}}>
                     <div className="about-cards" >
                         <h2>Who are we?</h2>
                         <p>We are a small company based on toronto canada, started shipping for amazon and now have our own fully functional system and provide serivces all over the continental US</p>
@@ -29,6 +45,7 @@ export default class About extends Component {
                         <p>please feel free to contact us about any problems you may have. Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, officia? Sint quasi accusamus perferendis excepturi animi! Tempore sunt nemo cumque libero doloremque? Quae eligendi nulla ullam sed itaque a culpa.</p>
                     </div>
             </div>
-        )
+            </>
+            )
     }
 }
