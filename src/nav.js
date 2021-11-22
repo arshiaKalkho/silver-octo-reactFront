@@ -22,7 +22,7 @@ export default function Nav() {
                 
                 <Link to="/" className="nav-links" onClick={()=>setCurrent("")}>Home</Link>
                 <Link to="/About" className="nav-links" onClick={()=>setCurrent("About")}>About</Link>
-                <Link to="/contactMe" className="nav-links" onClick={()=>setCurrent("Contact")}>Contact</Link>
+                <Link to="/Store" className="nav-links" onClick={()=>setCurrent("Store")}>Store</Link>
                 <h3 className="current-page">{currentPage}</h3>
             </div>
         </div>

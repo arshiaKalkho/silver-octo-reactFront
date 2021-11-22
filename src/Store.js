@@ -1,6 +1,6 @@
 import React from 'react'
 
-function contactMe() {
+function Store() {
     return (
         <div>
             contact me
@@ -8,4 +8,4 @@ function contactMe() {
     )
 }
 
-export default contactMe
+export default Store
