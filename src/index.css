@@ -262,11 +262,35 @@ html {
   color: var(--color-dark);
 }
 
-.card p {
+.about {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, auto);
+  gap: 2rem;
 }
 
-.about {
+.about-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  height: 20rem;
+  transition: 200ms ease-in-out;
 }
+.about-cards:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: 200ms ease-in-out;
+}
+
+/* pages VVVV footer */
 
 .footer {
   display: flex;
