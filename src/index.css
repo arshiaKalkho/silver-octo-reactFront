@@ -25,7 +25,7 @@ html {
   border-radius: 100vw;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: var(--color-tertioary);
+  background-color: var(--color-secondary);
   border-radius: 100vw;
 }
 
@@ -325,15 +325,40 @@ html {
   align-items: center;
   justify-content: space-around;
   width: calc(90vw + 1rem);
-  height: 10vh;
+  height: fit-content;
   border: 1px solid var(--color-light);
   border-radius: 10px;
   margin: 2rem;
 }
-.store-header > div {
+.store-header > div,
+.store-header > form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 0.9rem;
+}
+.search-submit-btn {
+  width: 50%;
+  padding: 2px;
+  color: var(--color-lighter);
+  background-color: var(--color-dark);
+  border: none;
+  border-radius: 6px;
+  margin-top: 3px;
+  transition: 100ms ease-in-out;
+}
+.search-submit-btn:hover {
+  color: var(--color-secondary);
+  transition: 100ms ease-in-out;
+}
+.search-submit-btn:active {
+  background-color: var(--color-secondary);
+  transition: 100ms ease-in-out;
+}
+.search-box {
+  border-radius: 10px;
+  border: none;
+  text-decoration: none;
 }
 .sidebar-product-container {
   display: flex;
@@ -361,6 +386,10 @@ html {
   font-size: 0.8rem;
   border-bottom: 1px solid var(--color-light);
 }
+.price-minmax > input {
+  width: 4rem;
+  margin: 4px;
+}
 .products {
   width: 70vw;
   height: 100vh;
@@ -375,8 +404,8 @@ html {
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 34px;
+  height: 20px;
 }
 .switch input {
   opacity: 0;
@@ -397,10 +426,10 @@ html {
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
+  height: 15px;
+  width: 15px;
+  left: 2px;
+  bottom: 2px;
   background-color: var(--color-lighter);
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -414,9 +443,9 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(15px);
+  -ms-transform: translateX(15px);
+  transform: translateX(15px);
 }
 .slider.round {
   border-radius: 34px;

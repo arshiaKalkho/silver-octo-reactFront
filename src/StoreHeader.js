@@ -9,16 +9,25 @@ function StoreHeader() {
                 <label class="switch">
                     <input type="checkbox" defaultChecked={false}></input>
                     <span class="slider round"></span>
-                </label>
-            </div>
-            <div>
-                Filter:
+                </label>Filter:
                 <label class="switch">
                     <input type="checkbox" defaultChecked={true}></input>
                     <span class="slider round"></span>
                 </label>
-                
             </div>
+            
+            <form className="search-box"action="#" method="get">
+                <input
+                    type="text"
+                    id="header-search"
+                    placeholder="Search products"
+                    name="s" 
+                />
+                
+                <button className="search-submit-btn"type="submit">Search</button>
+            </form>
+                
+            
             <div>
                 Sort By:
                 <select className="sort-dropdown">

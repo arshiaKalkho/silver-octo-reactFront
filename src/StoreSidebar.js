@@ -36,12 +36,13 @@ function StoreSidebar() {
             </div>
             <div className="collapse-tag" onClick={()=>{toggleState()}}>{collapse}</div>
 
-
+            <h4>Price</h4>
             <div className="price-minmax">
                 From:
-
+                <input type="number" step="10" min="0" max="10000" />
+                <br/>
                 To:
-                
+                <input type="number" step="10" min="1" max="10000" />
             </div>
         </div>
     )
