@@ -71,7 +71,7 @@ html {
 }
 .current-page {
   color: var(--color-secondary);
-  transition: 500ms ease-in-out;
+  transition: 200ms ease-in-out;
 }
 .nav-links {
   text-decoration: none;
@@ -101,7 +101,7 @@ html {
 
 .navbar:hover .current-page {
   opacity: 0;
-  transition: 500ms ease-in-out;
+  transition: 200ms ease-in-out;
 }
 
 .nav-logo {
