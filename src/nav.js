@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 export default function Nav() {
     
     
-    const [currentPage, setCurrentPage] = useState("Home");
+    const [currentPage, setCurrentPage] = useState("");
     
     const setCurrent = (curr)=>{
         setCurrentPage(curr);
