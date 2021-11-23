@@ -5,7 +5,7 @@ function Footer() {
         <div className="footer">
             <div className="footer-left">
                 <div className="footer-inner">
-                    <h2>More</h2>
+                    <h3>More</h3>
                     <p>docs</p>
                     <p>channel</p>
                     <p>tutorial</p>
@@ -20,7 +20,7 @@ function Footer() {
             </div>
             <div className="footer-right">
                 <div className="footer-inner">
-                <h2>Contact</h2>
+                <h3>Contact</h3>
                     <p>email</p>
                     <p>github</p>
 
