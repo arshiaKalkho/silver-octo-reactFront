@@ -343,9 +343,23 @@ html {
 }
 .store-sidebar {
   width: 20vw;
-  height: 70vh;
+  height: fit-content;
   border: 1px solid var(--color-light);
   border-radius: 10px;
+}
+.store-sidebar > * {
+  text-align: center;
+}
+
+.catagory-collapse > div {
+  text-align: center;
+}
+.collapse-tag {
+  text-align: right;
+  cursor: pointer;
+  margin: 4px;
+  font-size: 0.8rem;
+  border-bottom: 1px solid var(--color-light);
 }
 .products {
   width: 70vw;
