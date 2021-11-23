@@ -313,7 +313,41 @@ html {
   background-color: rgba(255, 255, 255, 0.9);
   transition: 200ms ease-in-out;
 }
-
+/* store page */
+.store {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.store-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: calc(90vw + 1rem);
+  height: 10vh;
+  border: 1px solid var(--color-light);
+  border-radius: 10px;
+  margin: 2rem;
+}
+.sidebar-product-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.store-sidebar {
+  width: 20vw;
+  height: 70vh;
+  border: 1px solid var(--color-light);
+  border-radius: 10px;
+}
+.products {
+  width: 70vw;
+  height: 100vh;
+  border-radius: 10px;
+  border: 1px solid var(--color-light);
+}
 /* pages VVVV footer */
 
 .footer {
