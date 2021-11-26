@@ -329,6 +329,7 @@ html {
   border: 1px solid var(--color-light);
   border-radius: 10px;
   margin: 2rem;
+  box-shadow: 0 5px 5px 0 var(--color-darker);
 }
 .store-header > div,
 .store-header > form {
@@ -371,6 +372,7 @@ html {
   height: fit-content;
   border: 1px solid var(--color-light);
   border-radius: 10px;
+  box-shadow: 0 5px 5px 0 var(--color-darker);
 }
 .store-sidebar > * {
   text-align: center;
@@ -378,6 +380,7 @@ html {
 
 .catagory-collapse > div {
   text-align: center;
+  cursor: pointer;
 }
 .collapse-tag {
   text-align: right;

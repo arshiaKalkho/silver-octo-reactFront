@@ -1,9 +1,12 @@
 
-import { height } from 'dom-helpers'
+
 import React,{useState} from 'react'
 
-function StoreSidebar() {
+function StoreSidebar(props) {
 
+    const parentStateHandler = props.parentStateHandler;
+    
+    
     
     const [visibility, setVisibility] = useState("visible")
     const [height, setHeight] = useState("fit-content")
@@ -25,24 +28,24 @@ function StoreSidebar() {
     
     return (
         <div className="store-sidebar">
-            <h4>Catagories</h4>
+            <h4>Departments</h4>
             <div className="catagory-collapse" style={{visibility:`${visibility}`, height:`${height}`}}>
-                <div>Electronics</div>
-                <div>Clothes</div>
-                <div>Outdoors</div>
-                <div>Toys</div>
-                <div>Computers</div>
-                <div>Gadgets</div>
+                <div onClick={()=>parentStateHandler("Electronics", null, null)}>Electronics</div>
+                <div onClick={()=>parentStateHandler("Clothes", null, null)}>Clothes</div>
+                <div onClick={()=>parentStateHandler("Outdoors", null, null)}>Outdoors</div>
+                <div onClick={()=>parentStateHandler("Toys", null, null)}>Toys</div>
+                <div onClick={()=>parentStateHandler("Computers", null, null)}>Computers</div>
+                <div onClick={()=>parentStateHandler("Gadgets", null, null)}>Gadgets</div>
             </div>
             <div className="collapse-tag" onClick={()=>{toggleState()}}>{collapse}</div>
 
             <h4>Price</h4>
             <div className="price-minmax">
                 From:
-                <input type="number" step="10" min="0" max="10000" />
+                <input onChange={(e)=>{parentStateHandler(null, e.target.value, null)}} type="number" step="10" min="0" max="10000" />
                 <br/>
                 To:
-                <input type="number" step="10" min="1" max="10000" />
+                <input onChange={(e)=>{parentStateHandler(null, null, e.target.value)}} type="number" step="10" min="1" max="10000" />
             </div>
         </div>
     )

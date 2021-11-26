@@ -1,7 +1,7 @@
 import React ,{useState}from 'react'
 
-function StoreHeader() {
-    //const [layout, setLayout] = useState("")
+function StoreHeader(props) {
+    const parentStateHandler = props.parentStateHandler;
     return (
         <div className="store-header">
             <div>
