@@ -12,9 +12,9 @@ export default class Store extends Component {
         this.baseUrl = process.env.REACT_APP_API_URL;
         this.state = {
             filterBool: true,
-            search: false,
+            search: "",
             saleBool: false,
-            order:false,
+            order:"Default",
             department:false,
             minPrice:0,
             maxPrice:10000,
@@ -25,19 +25,28 @@ export default class Store extends Component {
     }
     
 
-    DBrequestBuilderHeader = (_filterOn,_search, _saleBool,_order)=>{
-        
+    DBrequestBuilderHeader = (_filterOn,_search, _saleOn,_order)=>{
+        var _filterBool = this.state.filterBool;
+        var _saleBool = this.state.saleBool;
+        if(_filterOn != null){
+            _filterBool = !this.state.filterBool;//flip the state if argument isn't null only for type boolean 
+        }
+        if(_saleOn != null){
+            _saleBool = !this.state.saleBool;
+        }
+
         this.setState({
-            filterBool:_filterOn||this.state.filterBool,
+            filterBool:_filterBool,
+            saleBool:_saleBool,
             search:_search||this.state.search,
-            saleBool:_saleBool||this.state.saleBool,
             order:_order||this.state.order
         })
+        
         
     }
     DBrequestBuildeSideBar = (_department, _minPrice,_maxPrice)=>{
         
-        console.log(this.state)
+        
         this.setState({
         
         department:_department||this.state.department,
@@ -47,7 +56,7 @@ export default class Store extends Component {
     }
 
     componentDidMount(){//axios call to retreive data based on state
-        console.log(this.state.minPrice)
+        
     }
 
     constructUrlAcordingToState(){
