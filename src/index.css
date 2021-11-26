@@ -463,7 +463,7 @@ input:checked + .slider:before {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: fill;
+  width: stretch;
   height: fit-content;
   background-color: var(--color-dark);
 }

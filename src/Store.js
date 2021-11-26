@@ -26,6 +26,7 @@ export default class Store extends Component {
     
 
     DBrequestBuilderHeader = (_filterOn,_search, _saleOn,_order)=>{
+        
         var _filterBool = this.state.filterBool;
         var _saleBool = this.state.saleBool;
         if(_filterOn != null){
@@ -48,19 +49,19 @@ export default class Store extends Component {
         
         
         this.setState({
+            
+            department:_department||this.state.department,
+            minPrice:_minPrice||this.state.minPrice,
+            maxPrice:_maxPrice||this.state.maxPrice
+        })
         
-        department:_department||this.state.department,
-        minPrice:_minPrice||this.state.minPrice,
-        maxPrice:_maxPrice||this.state.maxPrice
-    })
     }
 
     componentDidMount(){//axios call to retreive data based on state
-        
     }
 
-    constructUrlAcordingToState(){
-        var temp = this.baseUrl;
+    constructUrlByToState(){
+        //var temp = this.baseUrl;
         
         
 
@@ -69,11 +70,7 @@ export default class Store extends Component {
 
     }
     
-    updateURLString(url){
-        //var completeUrl = url + 
-        //this.setState({urlString : })
-        
-    }
+    
 
 
     render(){
@@ -89,6 +86,3 @@ export default class Store extends Component {
     }
     
     
-    // getProduct(url){
-    //     //make axios call to server with urlString and extra filters from dbrequestbuilder func
-    // }

@@ -2,11 +2,17 @@ import React ,{useState}from 'react'
 
 function StoreHeader(props) {
     const parentStateHandler = props.parentStateHandler;
-    const handleSearchSubmit = (e)=>{
+    const[searchString, setSearchString] = useState("")
+    
+    
+    const handleSearchInput = (e)=>{
+        setSearchString(e.target.value)
         
-        console.log(e.target.value)
-        parentStateHandler(null,e.target.value,null,null)
+    }
+    const handleSearchSubmit = (e)=>{
         e.preventDefault();
+       
+        parentStateHandler(null,searchString,null,null)
 
     }
     return (
@@ -23,7 +29,7 @@ function StoreHeader(props) {
                 </label>
             </div>
             
-            <form className="search-box"onSubmit={(e)=>handleSearchSubmit(e)} method="get">
+            <form className="search-box" onSubmit={(e)=>{handleSearchSubmit(e)}} onChange={(e)=>handleSearchInput(e)} method="get">
                 <input
                     type="text"
                     id="header-search"
