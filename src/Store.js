@@ -11,6 +11,7 @@ export default class Store extends Component {
         super();
         this.baseUrl = process.env.REACT_APP_API_URL;
         this.state = {
+            currentProducts:[],
             filterBool: true,
             search: "",
             saleBool: false,
@@ -42,6 +43,7 @@ export default class Store extends Component {
             search:_search||this.state.search,
             order:_order||this.state.order
         })
+
         
         
     }
@@ -61,7 +63,7 @@ export default class Store extends Component {
     }
 
     constructUrlByToState(){
-        //var temp = this.baseUrl;
+        
         
         
 
@@ -79,7 +81,7 @@ export default class Store extends Component {
             <StoreHeader parentStateHandler={this.DBrequestBuilderHeader}/>
                 <div className="sidebar-product-container">
                     <StoreSidebar parentStateHandler={this.DBrequestBuildeSideBar}/> 
-                    <Products/>     
+                    <Products products={this.state.currentProducts}/>     
             </div>
         </div>)
         }
