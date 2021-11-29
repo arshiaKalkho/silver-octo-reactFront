@@ -62,16 +62,10 @@ export default class Store extends Component {
 
     componentDidMount(){//axios call to retreive data based on state
         
-        axios.get(baseUrl,{
-            headers:{
-                key:apiKey
-            },
-            data: this.constructUrlByToState(),
-            method: 'GET'
-        }).then(response=>{
+        axios.get(baseUrl + this.constructUrlByToState()).then(response=>{
             console.log(response)
             this.products = JSON.stringify(response)
-        }).catch(err=>console.log("error contacting the backend: ",err))
+        }).catch(err=>console.log("Error contacting the backend: ",err))
 
     }
 
