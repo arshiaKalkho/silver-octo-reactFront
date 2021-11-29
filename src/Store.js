@@ -2,16 +2,17 @@ import React, { Component } from 'react'
 import StoreHeader from './StoreHeader'
 import StoreSidebar from './StoreSidebar'
 import Products from './Products'
+import axios from 'axios'
 
 
+const baseUrl = process.env.REACT_APP_API_URL;
+const apiKey = process.env.REACT_APP_API_KEY
 
 
 export default class Store extends Component {
     constructor(){
         super();
-        this.baseUrl = process.env.REACT_APP_API_URL;
         this.state = {
-            currentProducts:[],
             filterBool: true,
             search: "",
             saleBool: false,
@@ -21,6 +22,7 @@ export default class Store extends Component {
             maxPrice:10000,
             perPage:32
         };
+        this.products = [];
         this.DBrequestBuildeSideBar = this.DBrequestBuildeSideBar.bind(this)
         this.DBrequestBuilderHeader = this.DBrequestBuilderHeader.bind(this)
     }
@@ -43,7 +45,6 @@ export default class Store extends Component {
             search:_search||this.state.search,
             order:_order||this.state.order
         })
-
         
         
     }
@@ -60,19 +61,36 @@ export default class Store extends Component {
     }
 
     componentDidMount(){//axios call to retreive data based on state
+        
+        axios.get(baseUrl,{
+            headers:{
+                key:apiKey
+            },
+            data: this.constructUrlByToState(),
+            method: 'GET'
+        }).then(response=>{
+            this.products = JSON.stringify(response)
+        })
+
     }
 
     constructUrlByToState(){
         
-        
-        
-
-
-        
+        var rqeuestObj = {
+            isFilterOn:this.state.filterBool,
+            searchFor:this.state.search,
+            isOnSale:this.state.isOnSale,
+            department:this.state.department,
+            minPrice:this.state.minPrice,
+            maxPrice:this.state.maxPrice,
+            orderBy:this.state.order,
+            perPage:this.state.perPage,
+        };
+        return JSON.stringify(rqeuestObj);
 
     }
     
-    
+     
 
 
     render(){
@@ -81,7 +99,7 @@ export default class Store extends Component {
             <StoreHeader parentStateHandler={this.DBrequestBuilderHeader}/>
                 <div className="sidebar-product-container">
                     <StoreSidebar parentStateHandler={this.DBrequestBuildeSideBar}/> 
-                    <Products products={this.state.currentProducts}/>     
+                    <Products products = {this.products} />     
             </div>
         </div>)
         }
