@@ -69,8 +69,9 @@ export default class Store extends Component {
             data: this.constructUrlByToState(),
             method: 'GET'
         }).then(response=>{
+            console.log(response)
             this.products = JSON.stringify(response)
-        })
+        }).catch(err=>console.log("error contacting the backend: ",err))
 
     }
 
