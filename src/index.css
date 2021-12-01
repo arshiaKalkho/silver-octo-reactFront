@@ -399,8 +399,15 @@ html {
   border-radius: 10px;
   border: 1px solid var(--color-light);
   display: grid;
-  grid-template-columns: repeat(auto-fit, 20rem);
+  grid-template-columns: repeat(auto-fit, 22rem);
+  padding: 1rem;
+  gap: 1rem;
   justify-content: center;
+  margin-bottom: 5rem;
+}
+/* product card */
+.product-card {
+  border: 1px solid var(--color-light);
 }
 
 /* product header switch */

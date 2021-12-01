@@ -19,7 +19,7 @@ export default class Store extends Component {
             saleBool: false,
             order:"Default",
             department:false,
-            minPrice:0,
+            minPrice:1,
             maxPrice:10000,
             perPage:32
         };
@@ -33,17 +33,27 @@ export default class Store extends Component {
         
         var _filterBool = this.state.filterBool;
         var _saleBool = this.state.saleBool;
+        var _searchQ;
         if(_filterOn != null){
             _filterBool = !this.state.filterBool;//flip the state if argument isn't null only for type boolean 
         }
         if(_saleOn != null){
             _saleBool = !this.state.saleBool;
         }
+        if(_search === ""){
+            _searchQ = ""
+        }else if(null){
+            _searchQ = this.state.search;
+        }else{
+            _searchQ = _search
+        }
+        
 
+        
         this.setState({
             filterBool:_filterBool,
             saleBool:_saleBool,
-            search:_search||this.state.search,
+            search:_searchQ,
             order:_order||this.state.order
         },()=>{
             
@@ -59,7 +69,7 @@ export default class Store extends Component {
             tempDepartment = false;
         else if(_department != null)
             tempDepartment = _department;
-
+        
         this.setState({
             
             department:tempDepartment,
@@ -108,6 +118,7 @@ export default class Store extends Component {
             perPage:this.state.perPage,
             key:apiKey
         };
+        
         return JSON.stringify(rqeuestObj);
         
     }
