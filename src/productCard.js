@@ -15,7 +15,7 @@ function productCard(props) {
         }
         return( 
             <>
-                <h4>{product.PRODUCT_PRICE}</h4>
+                <h3>{product.PRODUCT_PRICE}</h3>
             </>
         )
     }
@@ -23,11 +23,12 @@ function productCard(props) {
 
     return (
         <div className="product-card">
-            <img 
-            className="product-card-image"
-            src={backgroundURL}
-            alt="image not available"
-            />
+            <div className="product-img-container">
+                <img 
+                className="product-card-image"
+                src={backgroundURL}
+                />
+            </div>
             <h3>{props.product.PRODUCT_NAME}</h3>
             
             {price(props.product)}
