@@ -104,8 +104,18 @@ export default class Store extends Component {
 
     componentDidMount(){
         this.products = this.getProductFromBackend()
+        
     }
     
+    nothingToShowWithCurrentFilter(){
+        if(this.products === []){
+            return(
+                <div>
+                    Nothing to show with the current filter
+                </div>
+            )
+        }
+    }
 
     constructUrlByToState(){
         
@@ -134,7 +144,8 @@ export default class Store extends Component {
             <StoreHeader parentStateHandler={this.DBrequestBuilderHeader}/>
                 <div className="sidebar-product-container">
                     <StoreSidebar parentStateHandler={this.DBrequestBuildeSideBar}/> 
-                    <Products products = {this.state.products || []} />     
+                    <Products products = {this.state.products || []} />
+                   
             </div>
         </div>)
         }
