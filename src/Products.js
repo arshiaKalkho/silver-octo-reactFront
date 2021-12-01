@@ -4,10 +4,11 @@ import ProductCard from './productCard'
 function Products(props) {
     return (
         <div className="products">
-            {props.products.map((index)=>{
-                return( <ProductCard product={index}/>)   
-            }
-            )}    
+            {
+                props.products.map((index)=>{
+                    return( <ProductCard product={index}/>)   
+                })
+            }    
         </div>
     )
 }

@@ -6,13 +6,14 @@ import axios from 'axios'
 
 
 const baseUrl = process.env.REACT_APP_API_URL;
-const apiKey = process.env.REACT_APP_API_KEY
+const apiKey = process.env.REACT_APP_API_KEY;
 
 
 export default class Store extends Component {
     constructor(){
         super();
         this.state = {
+            products : [],
             filterBool: true,
             search: "",
             saleBool: false,
@@ -22,7 +23,7 @@ export default class Store extends Component {
             maxPrice:10000,
             perPage:32
         };
-        this.products = [];
+        
         this.DBrequestBuildeSideBar = this.DBrequestBuildeSideBar.bind(this)
         this.DBrequestBuilderHeader = this.DBrequestBuilderHeader.bind(this)
     }
@@ -44,45 +45,71 @@ export default class Store extends Component {
             saleBool:_saleBool,
             search:_search||this.state.search,
             order:_order||this.state.order
+        },()=>{
+            
+            this.products = this.getProductFromBackend()
         })
         
         
     }
     DBrequestBuildeSideBar = (_department, _minPrice,_maxPrice)=>{
         
-        
+        var tempDepartment = this.state.department;
+        if(_department === false)
+            tempDepartment = false;
+        else if(_department != null)
+            tempDepartment = _department;
+
         this.setState({
             
-            department:_department||this.state.department,
+            department:tempDepartment,
             minPrice:_minPrice||this.state.minPrice,
             maxPrice:_maxPrice||this.state.maxPrice
+        },()=>{
+            
+            this.products = this.getProductFromBackend()
         })
+    }
+    getProductFromBackend(){
         
+        axios.get(baseUrl + "products/" + this.constructUrlByToState(),
+        {
+            headers :  {'Access-Control-Allow-Origin': '*'}
+        }
+        ).then(response=>{
+            
+            this.setState({
+                products:response.data
+            })
+            
+        }).catch(err=>{console.log("Error contacting the backend: ",err)
+        
+            this.setState({
+                products:[]
+            });
+        })
     }
 
-    componentDidMount(){//axios call to retreive data based on state
-        
-        axios.get(baseUrl + this.constructUrlByToState()).then(response=>{
-            console.log(response)
-            this.products = JSON.stringify(response)
-        }).catch(err=>console.log("Error contacting the backend: ",err))
-
+    componentDidMount(){
+        this.products = this.getProductFromBackend()
     }
+    
 
     constructUrlByToState(){
         
         var rqeuestObj = {
             isFilterOn:this.state.filterBool,
             searchFor:this.state.search,
-            isOnSale:this.state.isOnSale,
+            isOnSale:this.state.saleBool,
             department:this.state.department,
             minPrice:this.state.minPrice,
             maxPrice:this.state.maxPrice,
             orderBy:this.state.order,
             perPage:this.state.perPage,
+            key:apiKey
         };
         return JSON.stringify(rqeuestObj);
-
+        
     }
     
      
@@ -94,7 +121,7 @@ export default class Store extends Component {
             <StoreHeader parentStateHandler={this.DBrequestBuilderHeader}/>
                 <div className="sidebar-product-container">
                     <StoreSidebar parentStateHandler={this.DBrequestBuildeSideBar}/> 
-                    <Products products = {this.products} />     
+                    <Products products = {this.state.products || []} />     
             </div>
         </div>)
         }

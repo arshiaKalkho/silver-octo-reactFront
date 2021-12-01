@@ -30,6 +30,7 @@ function StoreSidebar(props) {
         <div className="store-sidebar">
             <h4>Departments</h4>
             <div className="catagory-collapse" style={{visibility:`${visibility}`, height:`${height}`}}>
+                <div onClick={()=>parentStateHandler(false, null, null)}>All</div>
                 <div onClick={()=>parentStateHandler("Electronics", null, null)}>Electronics</div>
                 <div onClick={()=>parentStateHandler("Clothes", null, null)}>Clothes</div>
                 <div onClick={()=>parentStateHandler("Outdoors", null, null)}>Outdoors</div>
