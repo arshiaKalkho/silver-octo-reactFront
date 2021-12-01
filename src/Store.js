@@ -89,7 +89,7 @@ export default class Store extends Component {
             headers :  {'Access-Control-Allow-Origin': '*'}
         }
         ).then(response=>{
-            console.log( this.constructUrlByToState())
+            
             this.setState({
                 products:response.data
             })

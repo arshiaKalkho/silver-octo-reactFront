@@ -432,6 +432,12 @@ html {
 /* product card */
 .product-card {
   border: 1px solid var(--color-light);
+  border-radius: 10px;
+  height: 30rem;
+}
+.product-card-image {
+  width: 20rem;
+  height: 20rem;
 }
 
 /* product header switch */
