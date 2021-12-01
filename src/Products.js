@@ -3,7 +3,7 @@ import ProductCard from './productCard'
 
 function Products(props) {
     
-    if(props.products !== []){console.log(props.products)
+    if(props.products !== []){
         return (
             <div className="products">
                 {
