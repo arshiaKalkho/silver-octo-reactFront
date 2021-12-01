@@ -11,7 +11,7 @@ function StoreHeader(props) {
     }
     const handleSearchSubmit = (e)=>{
         e.preventDefault();
-       
+        
         parentStateHandler(null,searchString,null,null)
 
     }

@@ -40,6 +40,8 @@ export default class Store extends Component {
         if(_saleOn != null){
             _saleBool = !this.state.saleBool;
         }
+
+        //handeling search query set and reset
         if(_search === ""){
             _searchQ = ""
         }else if(null){
@@ -87,7 +89,7 @@ export default class Store extends Component {
             headers :  {'Access-Control-Allow-Origin': '*'}
         }
         ).then(response=>{
-            
+            console.log( this.constructUrlByToState())
             this.setState({
                 products:response.data
             })

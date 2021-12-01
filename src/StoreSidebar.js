@@ -42,11 +42,19 @@ function StoreSidebar(props) {
 
             <h4>Price</h4>
             <div className="price-minmax">
-                From:
-                <input onChange={(e)=>{parentStateHandler(null, e.target.value, null)}} type="number" step="10" min="0" max="10000" />
-                <br/>
-                To:
-                <input onChange={(e)=>{parentStateHandler(null, null, e.target.value)}} type="number" step="10" min="1" max="10000" />
+                
+                <div>
+                    From:
+                    <input onChange={(e)=>{parentStateHandler(null, e.target.value, null)}} type="number" step="10" min="0" max="10000" />
+                    <br/>
+                </div>
+                
+                <div>
+                    To:
+                    <input onChange={(e)=>{parentStateHandler(null, null, e.target.value)}} type="number" step="10" min="10" max="10000" />
+                </div>
+                
+                <button  className="minMax-reset-btn"onClick={()=>{parentStateHandler(null, 1, 10000, null)}}>Reset Price</button>
             </div>
         </div>
     )
