@@ -3,6 +3,7 @@ import React from 'react'
 function productCard(props) {
     
     const backgroundURL = props.product.PRODUCT_IMAGE;
+    const layout = props.layout;
     const price = (product)=>{
         if(product.PRODUCT_SALE_PRICE != null){
             return(
@@ -21,17 +22,28 @@ function productCard(props) {
     }
 
 
+
+    var flexDirection;
+    if(!layout){
+        flexDirection = "row"
+    }else{
+        flexDirection = "column"
+    }
+
+    // <img 
+    // className="product-card-image"
+    // src={backgroundURL}
+    // alt="not available"
+    // />
+
     return (
-        <div className="product-card">
-            <div className="product-img-container">
-                <img 
-                className="product-card-image"
-                src={backgroundURL}
-                />
+        <div className="product-card" style={{flexDirection: flexDirection}}>
+            <div className="product-img-container" style={{backgroundImage: `url(${backgroundURL})`}}>
             </div>
-            <h3>{props.product.PRODUCT_NAME}</h3>
-            
-            {price(props.product)}
+            <div>
+                <h3>{props.product.PRODUCT_NAME}</h3>
+                {price(props.product)}
+            </div>
         </div>
     )
 }

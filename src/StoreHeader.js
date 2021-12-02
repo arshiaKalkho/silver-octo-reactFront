@@ -2,6 +2,7 @@ import React ,{useState}from 'react'
 
 function StoreHeader(props) {
     const parentStateHandler = props.parentStateHandler;
+    const layoutHandler = props.layoutHandler;
     const[searchString, setSearchString] = useState("")
     
     
@@ -52,7 +53,7 @@ function StoreHeader(props) {
                 </select>
             </div>
             <div>
-                <div className="toggle-button" style={{backgroundImage:'url("/images/toggle-layout.svg")'}}></div>
+                <div className="toggle-button" onClick={()=>layoutHandler()} style={{backgroundImage:'url("/images/toggle-layout.svg")'}}></div>
             </div>
         </div>
     )

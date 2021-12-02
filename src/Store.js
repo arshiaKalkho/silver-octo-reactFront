@@ -21,13 +21,20 @@ export default class Store extends Component {
             department:false,
             minPrice:1,
             maxPrice:10000,
+            productsLayout:true,
             perPage:32
         };
         
         this.DBrequestBuildeSideBar = this.DBrequestBuildeSideBar.bind(this)
         this.DBrequestBuilderHeader = this.DBrequestBuilderHeader.bind(this)
+        this.changeProductLayout = this.changeProductLayout.bind(this)
     }
     
+    changeProductLayout(){
+        this.setState({
+            productsLayout:!this.state.productsLayout
+        })
+    }
 
     DBrequestBuilderHeader = (_filterOn,_search, _saleOn,_order)=>{
         
@@ -105,16 +112,7 @@ export default class Store extends Component {
     componentDidMount(){
         this.products = this.getProductFromBackend()
         
-    }
-    
-    nothingToShowWithCurrentFilter(){
-        if(this.products === []){
-            return(
-                <div>
-                    Nothing to show with the current filter
-                </div>
-            )
-        }
+        
     }
 
     constructUrlByToState(){
@@ -141,11 +139,11 @@ export default class Store extends Component {
     render(){
         return(
             <div className="store">
-            <StoreHeader parentStateHandler={this.DBrequestBuilderHeader}/>
+            <StoreHeader parentStateHandler={this.DBrequestBuilderHeader} layoutHandler = {this.changeProductLayout}/>
                 <div className="sidebar-product-container">
                     <StoreSidebar parentStateHandler={this.DBrequestBuildeSideBar}/> 
-                    <Products products = {this.state.products || []} />
-                   
+                    <Products products = {this.state.products || []} layout = {this.state.productsLayout} />
+                
             </div>
         </div>)
         }
