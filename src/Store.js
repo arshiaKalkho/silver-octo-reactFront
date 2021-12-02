@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import StoreHeader from './StoreHeader'
 import StoreSidebar from './StoreSidebar'
 import Products from './Products'
+import StoreFooter from './StoreFooter'
 import axios from 'axios'
 
 
@@ -22,17 +23,25 @@ export default class Store extends Component {
             minPrice:1,
             maxPrice:10000,
             productsLayout:true,
+            currentPage:0,
             perPage:32
         };
         
         this.DBrequestBuildeSideBar = this.DBrequestBuildeSideBar.bind(this)
         this.DBrequestBuilderHeader = this.DBrequestBuilderHeader.bind(this)
         this.changeProductLayout = this.changeProductLayout.bind(this)
+        this.setPerPageAndLimit = this.setPerPageAndLimit.bind(this)
     }
     
     changeProductLayout(){
         this.setState({
             productsLayout:!this.state.productsLayout
+        })
+    }
+    setPerPageAndLimit(_perPage, _currPage){
+        this.setState({
+            perPage : _perPage || this.perPage,
+            currentPage : _currPage || this.currentPage
         })
     }
 
@@ -143,8 +152,9 @@ export default class Store extends Component {
                 <div className="sidebar-product-container">
                     <StoreSidebar parentStateHandler={this.DBrequestBuildeSideBar}/> 
                     <Products products = {this.state.products || []} layout = {this.state.productsLayout} />
-                
+                    
             </div>
+            <StoreFooter pageHandeler={this.setPerPageAndLimit}/>
         </div>)
         }
     }

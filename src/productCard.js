@@ -24,17 +24,14 @@ function productCard(props) {
 
 
     var flexDirection;
+    
     if(!layout){
         flexDirection = "row"
+        
     }else{
         flexDirection = "column"
+        
     }
-
-    // <img 
-    // className="product-card-image"
-    // src={backgroundURL}
-    // alt="not available"
-    // />
 
     return (
         <div className="product-card" style={{flexDirection: flexDirection}}>
