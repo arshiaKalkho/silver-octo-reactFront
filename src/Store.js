@@ -41,14 +41,14 @@ export default class Store extends Component {
     setPerPageAndLimit(_perPage, _currPage){
         var current = this.state.currentPage;
         var page = this.state.perPage;
-        if( _currPage !== null && _currPage === true){//null and value check for current page
+        if( _currPage && this.state.products.length === this.state.perPage){
         
             current = this.state.currentPage+1
         }else if(_currPage === false && this.state.currentPage > 1){
             current = this.state.currentPage-1
         }
 
-        if(_perPage !== null){//null check for perpage
+        if(_perPage !== null){
             page = _perPage
         }
         this.setState({
@@ -56,6 +56,7 @@ export default class Store extends Component {
             currentPage : current
         },()=>{
             this.products = this.getProductFromBackend()   
+            
         })
     
 
@@ -73,7 +74,6 @@ export default class Store extends Component {
         if(_saleOn != null){
             _saleBool = !this.state.saleBool;
         }
-
         //handeling search query set and reset
         if(_search === ""){
             _searchQ = ""
@@ -82,8 +82,6 @@ export default class Store extends Component {
         }else{
             _searchQ = _search
         }
-        
-
         
         this.setState({
             filterBool:_filterBool,
@@ -110,7 +108,6 @@ export default class Store extends Component {
             minPrice:_minPrice||this.state.minPrice,
             maxPrice:_maxPrice||this.state.maxPrice
         },()=>{
-            
             this.products = this.getProductFromBackend()
         })
     }
@@ -134,13 +131,11 @@ export default class Store extends Component {
             
         })
     }
-
     componentDidMount(){
         this.setState({
             products : this.getProductFromBackend()
         })
     }
-
     constructUrlByToState(){
         
         var rqeuestObj = {
