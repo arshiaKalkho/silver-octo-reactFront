@@ -24,7 +24,7 @@ export default class Store extends Component {
             maxPrice:10000,
             productsLayout:true,
             currentPage:1,
-            perPage:16
+            perPage:1
         };
         
         this.DBrequestBuildeSideBar = this.DBrequestBuildeSideBar.bind(this)
@@ -46,9 +46,13 @@ export default class Store extends Component {
         }else if(_currPage === false && this.state.currentPage > 1){
             counter = this.state.currentPage-1
         }
+
         this.setState({
             perPage : _perPage || this.perPage,
             currentPage : counter
+        },()=>{
+            this.products = this.getProductFromBackend()
+            
         })
 
     }
@@ -83,7 +87,6 @@ export default class Store extends Component {
             search:_searchQ,
             order:_order||this.state.order
         },()=>{
-            
             this.products = this.getProductFromBackend()
         })
         
@@ -121,16 +124,16 @@ export default class Store extends Component {
             
         }).catch(err=>{console.log("Error contacting the backend: ",err)
         
-            this.setState({
-                products:[]
-            });
+            // this.setState({
+            //     products:[]
+            // });
         })
     }
 
     componentDidMount(){
-        this.products = this.getProductFromBackend()
-        
-        
+        this.setState({
+            products : this.getProductFromBackend()
+        })
     }
 
     constructUrlByToState(){
@@ -144,8 +147,10 @@ export default class Store extends Component {
             maxPrice:this.state.maxPrice,
             orderBy:this.state.order,
             perPage:this.state.perPage,
+            currentPage: this.state.currentPage,
             key:apiKey
         };
+        
         
         return JSON.stringify(rqeuestObj);
         

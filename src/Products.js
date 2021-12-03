@@ -18,7 +18,7 @@ function Products(props) {
             <div className="products" style={{gridTemplateColumns: `repeat(${layoutC}, ${layoutW}) ` }}>
                 {
                     props.products.map((index)=>{
-                        return( <ProductCard product={index} layout={props.layout}/>)   
+                        return( <ProductCard key={index.PRODUCT_ID} product={index} layout={props.layout}/>)   
                     })
                 }    
             </div>

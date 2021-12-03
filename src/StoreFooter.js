@@ -8,14 +8,14 @@ function StoreFooter(props) {
             <div>
                 perPage:
                 <select className="sort-dropdown"  onChange={(e)=>pageHandeler(e.target.value,null)}>
-                        <option value="16"> 16</option>
-                        <option value="32"> 32</option>
-                        <option value="64"> 64</option>
+                        <option value="1"> 1</option>
+                        <option value="2"> 2</option>
+                        <option value="4"> 4</option>
                     
                 </select>
             </div>
             
-            <div ckassName="page-counter">
+            <div className="page-counter">
                 <button onClick={()=>pageHandeler(null,false)}>prev</button>
                 {currentPage}
                 <button onClick={()=>pageHandeler(null,true)}>next</button>

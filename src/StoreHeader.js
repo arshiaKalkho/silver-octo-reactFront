@@ -43,7 +43,7 @@ function StoreHeader(props) {
                 
             
             <div>
-                Sort By:
+                Sort By: 
                 <select className="sort-dropdown"  onChange={(e)=>parentStateHandler(null,null,null,e.target.value)}>
                     <option value="Default"> Default</option>
                     <option value="A-Z"> Alphabetical A - Z</option>
