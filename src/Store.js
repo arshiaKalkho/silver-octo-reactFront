@@ -31,11 +31,30 @@ export default class Store extends Component {
         this.DBrequestBuilderHeader = this.DBrequestBuilderHeader.bind(this)
         this.changeProductLayout = this.changeProductLayout.bind(this)
         this.setPerPageAndLimit = this.setPerPageAndLimit.bind(this)
+        this.resetAllButton = this.resetAllButton.bind(this)
     }
     
     changeProductLayout(){
         this.setState({
             productsLayout:!this.state.productsLayout
+        })
+    }
+    resetAllButton(){
+        this.setState({
+            products : [],
+            filterBool: true,
+            search: "",
+            saleBool: false,
+            order:"Default",
+            department:false,
+            minPrice:1,
+            maxPrice:10000,
+            productsLayout:true,
+            currentPage:1,
+            perPage:16
+        },()=>{
+            this.products = this.getProductFromBackend()   
+            
         })
     }
     setPerPageAndLimit(_perPage, _currPage){
@@ -162,7 +181,7 @@ export default class Store extends Component {
     render(){
         return(
             <div className="store">
-            <StoreHeader parentStateHandler={this.DBrequestBuilderHeader} layoutHandler = {this.changeProductLayout}/>
+            <StoreHeader parentStateHandler={this.DBrequestBuilderHeader} resetAll = {this.resetAllButton}layoutHandler = {this.changeProductLayout}/>
                 <div className="sidebar-product-container">
                     <StoreSidebar parentStateHandler={this.DBrequestBuildeSideBar}/> 
                     <Products products = {this.state.products || []} layout = {this.state.productsLayout} />

@@ -3,6 +3,7 @@ import React ,{useState}from 'react'
 function StoreHeader(props) {
     const parentStateHandler = props.parentStateHandler;
     const layoutHandler = props.layoutHandler;
+    const resetAll = props.resetAll;
     const[searchString, setSearchString] = useState("")
     
     
@@ -41,6 +42,7 @@ function StoreHeader(props) {
                 <button className="search-submit-btn"type="submit">Search</button>
             </form>
                 
+
             
             <div>
                 Sort By: 
@@ -52,9 +54,14 @@ function StoreHeader(props) {
                     <option value="H-L"> Price High - Low</option>
                 </select>
             </div>
+            
+            <div>
+                <button className="reset-all-btn" onClick={()=>resetAll()}>Reset All</button>
+            </div>
             <div>
                 <div className="toggle-button" onClick={()=>layoutHandler()} style={{backgroundImage:'url("/images/toggle-layout.svg")'}}></div>
             </div>
+            
         </div>
     )
 }
