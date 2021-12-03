@@ -24,7 +24,7 @@ export default class Store extends Component {
             maxPrice:10000,
             productsLayout:true,
             currentPage:1,
-            perPage:1
+            perPage:16
         };
         
         this.DBrequestBuildeSideBar = this.DBrequestBuildeSideBar.bind(this)
@@ -39,21 +39,25 @@ export default class Store extends Component {
         })
     }
     setPerPageAndLimit(_perPage, _currPage){
-        var counter = this.state.currentPage;
-        if(_currPage){
+        var current = this.state.currentPage;
+        var page = this.state.perPage;
+        if( _currPage !== null && _currPage === true){//null and value check for current page
         
-            counter = this.state.currentPage+1
+            current = this.state.currentPage+1
         }else if(_currPage === false && this.state.currentPage > 1){
-            counter = this.state.currentPage-1
+            current = this.state.currentPage-1
         }
 
+        if(_perPage !== null){//null check for perpage
+            page = _perPage
+        }
         this.setState({
-            perPage : _perPage || this.perPage,
-            currentPage : counter
+            perPage : page,
+            currentPage : current
         },()=>{
-            this.products = this.getProductFromBackend()
-            
+            this.products = this.getProductFromBackend()   
         })
+    
 
     }
     
@@ -127,6 +131,7 @@ export default class Store extends Component {
             // this.setState({
             //     products:[]
             // });
+            
         })
     }
 
