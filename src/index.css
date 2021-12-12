@@ -581,7 +581,6 @@ input:checked + .slider:before {
   height: 90vh;
 }
 .product-page-right {
-  margin-top: 4rem;
 }
 .product-page-image {
   background-position: center;
@@ -590,7 +589,19 @@ input:checked + .slider:before {
   width: 90%;
   height: 90%;
 }
-
+.crossed-price {
+  font-size: 0.9rem;
+  position: relative;
+}
+.crossed-price::before {
+  content: "";
+  width: 2.7rem;
+  height: 2px;
+  background: rgb(0, 0, 0);
+  position: absolute;
+  bottom: 7px;
+  left: 0;
+}
 /* pages VVVV footer */
 
 .footer {

@@ -14,6 +14,7 @@ export default class ProductPage extends Component {
         
         super(props)
         this.state={
+            crossedPriceStyle:"",
             currentProductId:0,
             currentProduct: {}
         }
@@ -24,6 +25,12 @@ export default class ProductPage extends Component {
             currentProductId:id
         })
     }
+    crossNotSalePrice(){
+        if(!this.state.currentProduct.PRODUCT_SALE_PRICE)
+            return ""
+        return"crossed-price"
+    }
+
     getProductFromBackend(){
         
         
@@ -56,6 +63,7 @@ export default class ProductPage extends Component {
         
     }
 
+
     render() {
         return(
             <div className="product-page">
@@ -66,7 +74,7 @@ export default class ProductPage extends Component {
 
                 <div className="product-page-right">
                     <h2>{this.state.currentProduct.PRODUCT_NAME} </h2>
-                    <h3>{this.state.currentProduct.PRODUCT_PRICE} </h3>
+                    <h3 className={this.crossNotSalePrice()}>{this.state.currentProduct.PRODUCT_PRICE} </h3>
                     <h3 style={{color: "red"}}>{this.state.currentProduct.PRODUCT_SALE_PRICE||null} </h3>
                     <p>{this.state.currentProduct.PRODUCT_DESC}</p>
                 </div>
