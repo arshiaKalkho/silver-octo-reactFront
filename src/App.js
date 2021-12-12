@@ -1,12 +1,12 @@
 import React from 'react'
 import {BrowserRouter as Router, Routes, Route, useParams} from "react-router-dom";
 
-import Nav from "./nav.js";
-import Main from "./main.js";
-import About from "./about.js";
-import Store from './Store';
-import Footer from "./footer"
-import ProductPage from './productPage';
+import Nav from "./Nav";
+import Main from "./Main/Main";
+import About from "./About/About";
+import Store from './Store/Store';
+import Footer from "./Footer"
+import ProductPage from './productPage/productPage';
 
 import './index.css';
 

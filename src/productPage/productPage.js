@@ -77,6 +77,7 @@ export default class ProductPage extends Component {
                     <h3 className={this.crossNotSalePrice()}>{this.state.currentProduct.PRODUCT_PRICE} </h3>
                     <h3 style={{color: "red"}}>{this.state.currentProduct.PRODUCT_SALE_PRICE||null} </h3>
                     <p>{this.state.currentProduct.PRODUCT_DESC}</p>
+                    <button className="addtocart-btn">Add to cart</button>
                 </div>
                 
             </div>

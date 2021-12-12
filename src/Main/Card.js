@@ -1,6 +1,6 @@
 import React from 'react'
 
-function card(props) {
+function Card(props) {
     const title = props.title;
     const body = props.body;
     
@@ -12,4 +12,4 @@ function card(props) {
     )
 }
 
- export default card
+export default Card

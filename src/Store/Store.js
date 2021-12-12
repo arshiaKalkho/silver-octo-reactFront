@@ -184,7 +184,7 @@ export default class Store extends Component {
             <StoreHeader parentStateHandler={this.DBrequestBuilderHeader} resetAll = {this.resetAllButton}layoutHandler = {this.changeProductLayout}/>
                 <div className="sidebar-product-container">
                     <StoreSidebar parentStateHandler={this.DBrequestBuildeSideBar}/> 
-                    <Products products = {this.state.products || []} layout = {this.state.productsLayout} />
+                    <Products products = {this.state.products||[]} layout = {this.state.productsLayout} />
                     
             </div>
             <StoreFooter pageHandeler={this.setPerPageAndLimit} currentPage = {this.state.currentPage}/>

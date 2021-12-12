@@ -13,7 +13,7 @@ function Products(props) {
         layoutW= '90%'
     }
 
-    if(props.products !== null){
+    
         return (
             <div className="products" style={{gridTemplateColumns: `repeat(${layoutC}, ${layoutW}) ` }}>
                 {
@@ -23,13 +23,6 @@ function Products(props) {
                 }    
             </div>
         )
-    }else{
-        return(
-            <>
-                No product were found with the current filter configuration
-            </>
-        )
-    }
 }
 
 export default Products
