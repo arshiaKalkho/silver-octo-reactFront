@@ -26,26 +26,26 @@ export default class ProductPage extends Component {
     }
     getProductFromBackend(){
         
-        if(!this.currentProductId)
-            return;
         
-        axios.get(baseUrl + "product/" + {id:this.currentProductId, key:apiKey} ,
+        
+        axios.get(baseUrl + "product/" + JSON.stringify({id:this.state.currentProductId, key:apiKey}) ,
         {
             headers :  {'Access-Control-Allow-Origin': '*'}
         }
         ).then(response=>{
             
-            this.setState({
-                currentProduct:response.data
+            this.setState({//data is an array
+                currentProduct:response.data[0]
             })
             
         }).catch(err=>{console.log("Error contacting the backend: ",err)
         
-            this.setState({
-                currentProduct:null
-            });
+            // this.setState({
+            //     currentProduct:null
+            // });
             
         })
+        
     }
     componentDidMount(){
         this.setState({
@@ -54,15 +54,23 @@ export default class ProductPage extends Component {
             this.getProductFromBackend()
         })
         
-        
     }
 
     render() {
         return(
-            <div>
+            <div className="product-page">
                 
-                <h3>{this.currentProduct} </h3>
-                {/* <h3>{this.currentProduct.PRODUCT_DESC}</h3> */}
+                <div className="product-page-left">
+                    <div className="product-page-image" style={{ backgroundImage: `url(${this.state.currentProduct.PRODUCT_IMAGE})`}}></div>
+                </div>
+
+                <div className="product-page-right">
+                    <h2>{this.state.currentProduct.PRODUCT_NAME} </h2>
+                    <h3>{this.state.currentProduct.PRODUCT_PRICE} </h3>
+                    <h3 style={{color: "red"}}>{this.state.currentProduct.PRODUCT_SALE_PRICE||null} </h3>
+                    <p>{this.state.currentProduct.PRODUCT_DESC}</p>
+                </div>
+                
             </div>
         )
     }
