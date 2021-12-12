@@ -1,7 +1,8 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 
-function productCard(props) {
-    
+function ProductCard(props) {
+    const navigate = useNavigate();
     const backgroundURL = props.product.PRODUCT_IMAGE;
     const layout = props.layout;
     const price = (product)=>{
@@ -10,7 +11,7 @@ function productCard(props) {
                 <>
                     
                     <h3 style={{color:"red"}}>{product.PRODUCT_SALE_PRICE}</h3>
-                    <h5 style={{color:"lightgrey"}}>{product.PRODUCT_PRICE}</h5>
+                    <h5 className="crossed-price">{product.PRODUCT_PRICE}</h5>
                 </>
             )
         }
@@ -21,7 +22,10 @@ function productCard(props) {
         )
     }
 
-
+    const linkTo = ()=>{
+        var path = "/Store/" + props.product.PRODUCT_ID
+        navigate(path);
+    }
 
     var flexDirection;
     
@@ -34,15 +38,19 @@ function productCard(props) {
     }
 
     return (
-        <div className="product-card" style={{flexDirection: flexDirection}}>
-            <div className="product-img-container" style={{backgroundImage: `url(${backgroundURL})`}}>
+        
+            <div onClick={linkTo} className="product-card" style={{flexDirection: flexDirection}}>
+                
+                <div className="product-img-container" style={{backgroundImage: `url(${backgroundURL})`}}>
+                </div>
+                
+                <div>
+                    <h3>{props.product.PRODUCT_NAME}</h3>
+                    {price(props.product)}
+                </div>
             </div>
-            <div>
-                <h3>{props.product.PRODUCT_NAME}</h3>
-                {price(props.product)}
-            </div>
-        </div>
+        
     )
 }
 
-export default productCard
+export default ProductCard
