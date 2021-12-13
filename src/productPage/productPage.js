@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 import axios from 'axios';
-
+import ImageCarousel from './ImageCarousel';
 
 const baseUrl = process.env.REACT_APP_API_URL;
 const apiKey = process.env.REACT_APP_API_KEY;
@@ -69,7 +69,7 @@ export default class ProductPage extends Component {
             <div className="product-page">
                 
                 <div className="product-page-left">
-                    <div className="product-page-image" style={{ backgroundImage: `url(${this.state.currentProduct.PRODUCT_IMAGE})`}}></div>
+                    <ImageCarousel image={this.state.currentProduct.PRODUCT_IMAGE}/>
                 </div>
 
                 <div className="product-page-right">
