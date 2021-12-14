@@ -40,11 +40,12 @@ export default class ProductPage extends Component {
             headers :  {'Access-Control-Allow-Origin': '*'}
         }
         ).then(response=>{
-            
             this.setState({//data is an array
                 currentProduct:response.data[0]
             })
             
+
+        
         }).catch(err=>{console.log("Error contacting the backend: ",err)
         
             // this.setState({
@@ -59,7 +60,9 @@ export default class ProductPage extends Component {
             currentProductId : this.props.id
         },()=>{
             this.getProductFromBackend()
+            
         })
+        
         
     }
 
@@ -69,7 +72,7 @@ export default class ProductPage extends Component {
             <div className="product-page">
                 
                 <div className="product-page-left">
-                    <ImageCarousel image={this.state.currentProduct.PRODUCT_IMAGE}/>
+                    <ImageCarousel image={this.state.currentProduct.product_image}/>
                 </div>
 
                 <div className="product-page-right">

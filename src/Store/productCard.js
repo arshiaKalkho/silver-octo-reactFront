@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 function ProductCard(props) {
     const navigate = useNavigate();
-    const backgroundURL = props.product.PRODUCT_IMAGE;
+    const backgroundURL = JSON.parse(props.product.product_image)[0];
+
     const layout = props.layout;
     const price = (product)=>{
         if(product.PRODUCT_SALE_PRICE != null){
