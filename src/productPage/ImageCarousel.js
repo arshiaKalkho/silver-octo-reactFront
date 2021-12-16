@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import ImageCarouselFooter from './imageCarouselFooter'
 
 
 function ImageCarousel(props) {
@@ -20,8 +21,9 @@ function ImageCarousel(props) {
     if(props.image){
         return (
             <div className="product-page-image" style={{ backgroundImage: `url(${JSON.parse(props.image)[currImageIndex]})`}}>
-                <button className="product-page-btn" onClick={()=>prevbutton()}>prev</button>
-                <button className="product-page-btn" onClick={()=>nextbutton()}>next</button>
+                <ImageCarouselFooter index={currImageIndex} imageList = {JSON.parse(props.image)}/>
+                <button className="product-page-left-btn" onClick={()=>prevbutton()}> &#8656;</button>
+                <button className="product-page-right-btn" onClick={()=>nextbutton()}>&#8658;</button>
             </div>
         )
     }else{
