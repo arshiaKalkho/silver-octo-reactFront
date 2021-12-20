@@ -673,6 +673,7 @@ input:checked + .slider:before {
 .footer-inner > * {
   color: var(--color-lighter);
 }
+/* Rating System */
 
 @media only screen and (min-width: 1200px) {
   .navbar:hover .nav-links {
