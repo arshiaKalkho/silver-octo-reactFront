@@ -33,7 +33,7 @@ export default class About extends Component {
                         </div>
                         <div className="about-cards">
                             <h2>How to contact us</h2>
-                            <p>email, phone, post, main careing peagon Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio mollitia possimus sequi ratione et quo repudiandae animi sed rerum accusantium perspiciatis dolorem laudantium, quaerat quas, aspernatur ad? Amet, culpa? Alias!</p>
+                            <p>email, phone, post, mail careing peagon Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio mollitia possimus sequi ratione et quo repudiandae animi sed rerum accusantium perspiciatis dolorem laudantium, quaerat quas, aspernatur ad? Amet, culpa? Alias!</p>
                         </div>
                         <div className="about-cards">
                             <h2>Other forms</h2>
