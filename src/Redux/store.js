@@ -1,13 +1,14 @@
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import authreducer from "./Reducers/AuthReducer";
+import CartReducer from "./Reducers/CartReducer";
 import thunk from "redux-thunk";
-// import authErrorReducer from "./reducers/AuthErrorReducer";
+
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
   authState: authreducer,
-  //authError: authErrorReducer,
+  CartState: CartReducer
 });
 
 const store = createStore(

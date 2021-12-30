@@ -4,7 +4,7 @@ const authState = {//the initial state of the reducer
     name:"",
     expires_at: "",
     jwttoken:"",
-    authorities:[""]
+    authorities:""
   }
 }
 
